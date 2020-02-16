@@ -1,0 +1,14 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "settings": {
+  },
+  "plugins": [],
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "rules": {
+  }
+}
