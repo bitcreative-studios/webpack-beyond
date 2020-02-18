@@ -1,6 +1,5 @@
 .counter {
   display: flex;
-  outline: 1px dashed blue;
 }
 
 .counter__value {

@@ -1,6 +1,5 @@
 const path = require("path")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
-const webpack = require("webpack")
 
 module.exports = {
   context: path.resolve(__dirname, "..", "src"),
@@ -10,12 +9,12 @@ module.exports = {
   mode: "development",
   output: {
     filename: "[name]-bundle.js",
-    path: path.resolve(__dirname, "..", "dist"),
+    path: path.resolve(__dirname, "..", "static"),
     publicPath: "/",
   },
   devServer: {
     overlay: true,
-    contentBase: "dist",
+    contentBase: "static",
   },
   module: {
     rules: [
