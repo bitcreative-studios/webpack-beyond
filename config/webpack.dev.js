@@ -1,9 +1,11 @@
 const path = require("path")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
+const webpack = require("webpack")
 
 module.exports = {
+  context: path.resolve(__dirname, "..", "src"),
   entry: {
-    main: ["./src/main.js"],
+    main: ["react-hot-loader/patch", "./client/index.js"],
   },
   mode: "development",
   output: {
@@ -23,14 +25,6 @@ module.exports = {
         use: [{ loader: "babel-loader" }],
       },
       {
-        test: /\.html$/,
-        use: [
-          { loader: "file-loader", options: { name: "[name].html" } },
-          { loader: "extract-loader" },
-          { loader: "html-loader", options: { attrs: ["img:src"] } },
-        ],
-      },
-      {
         test: /\.css$/,
         use: [{ loader: "style-loader" }, { loader: "css-loader" }],
       },
@@ -42,4 +36,11 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./client/index.html",
+      filename: "index.html",
+      inject: "body",
+    }),
+  ],
 }
