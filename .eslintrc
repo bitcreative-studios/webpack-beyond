@@ -1,4 +1,6 @@
 {
+  "parser": "babel-eslint",
+  "extends": ["eslint:recommended","prettier"],
   "parserOptions": {
     "ecmaVersion": 2018
   },
@@ -7,6 +9,7 @@
   "plugins": [],
   "env": {
     "browser": true,
+    "node": true,
     "es6": true
   },
   "rules": {
